@@ -1,0 +1,23 @@
+import win.ui;
+import web.view;
+
+// 创建 winform 窗口
+var mainForm = win.form(text="视频"; fullscreen=true);
+
+// 设置默认启动参数，包括用户代理
+web.view.browserArguments = {
+    "--user-agent=pan.baidu.com"
+};
+
+// 添加 web.view 控件作为窗口的子控件
+var wb = web.view(mainForm);
+
+// 加载网页
+wb.go("https://yun.bizha.top/Tianlala");
+
+
+// 显示窗口
+mainForm.show();
+
+// 启动消息循环
+win.loopMessage();
